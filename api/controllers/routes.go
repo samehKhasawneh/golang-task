@@ -16,7 +16,7 @@ func (s *Server) initializeRoutes() {
 		api.POST("/register", s.CreateUser)
 
 		//Tweets routes
-		api.GET("/search_tweets", middlewares.TokenAuthMiddleware(), s.SearchTweets)
+		api.GET("/tweets", middlewares.TokenAuthMiddleware(), s.SearchTweets)
 		api.POST("/tweets", middlewares.TokenAuthMiddleware(), s.SaveTweets)
 		api.POST("/posts", middlewares.TokenAuthMiddleware(), s.CreateTweet)
 		api.GET("/posts", middlewares.TokenAuthMiddleware(), s.GetTweets)
